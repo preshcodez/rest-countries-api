@@ -1,0 +1,253 @@
+Javascript Frontend frameworks and libraries are essential tools for
+building mordern web applications. They provide pre-built components,
+structure, and utilities that simplify the development process.
+
+Javascript frameworks
+Angular, Vue.js and React.js
+Next.js
+
+Why React.js over Angular and Vue.js
+1. Wide Adoption: Widely used in industry, with extensive documentation and tutorials available.
+2. Large and Active: Maintained by facebook and has a vast community and a rich ecosystem of third-party libraries and tools.
+
+ React.js often referred to as React, is a popular JavaScript library for building user interfaces, particularly for multi-page applications where data changes over time. it was developed by facebook and released in 2013.
+
+ why pick react over JS
+ While vanilla JavaScript is powerful and flexible, React offers
+significant advantages for building mordern interactive and scalabe web apps
+
+npm, which stands for Node Package Manager, is a package manager for
+JavaScript. npm allows developers to install, share, and manage
+dependancies(libraries, frameworks and tools) for your javascript projects
+
+React Boostrap, React Router, React Icons, React hot Toast, React Router Dom,.............
+
+Virtual DOM
+Create React App Environment, Vite Enviroment: there are built-in tools that provide a fast and efficient development environment
+
+JSX/TSX (JavaScript/TypeScript XML) is a syntax extension for javaScript that is commonly used in React to describe what the UI should look like. componentName.tsx and ComponentName.tsx
+
+=========================================================================
+React - is a popular JS library for building dynamic and interactive user interfaces, especially single-page applications. It was created by FACEBOOK and is widely used to develop modern web applications with reusable components
+
+Characteristics of REACT JS
+- Component Based Architecture
+- Virtual DOM (instead of directly manipulating the browser's dom)
+- USES JSX (javascript XML)
+- Unidirectional Data flow (from parent to child components)
+- FLexibility (focuses only on the view layer)
+
+REACT INSTALLATION 
+create a folder
+npm create vite@latest
+. - to pick folder name as project name else just type your project name
+clearing out the project folder to begin a new project after INSTALLATION
+
+REACT COMPONENT - they are reusable Javascript functions that control a user interfaces UI
+Types
+Functional Component (modern)//
+Class Component (old)
+
+Rules when working with components
+1. Must start with uppercase(PascalCasing)
+2. Must return an element - xml/html
+3. Can only return one parent element
+
+Rules guiding JSX
+1.  Makes use of the className attribute class
+<h1 className="">Components</h1> ------ accepted
+<h1 class="">Components</h1> ------ not accepted
+
+2. Every tag must be closed
+<img src="" alt="" />
+<br />
+
+3. React Fragment
+<>
+<div className="">
+
+</div>
+</>
+Note: You cant assign attributes to react fragments
+
+NESTING COMPONENTS
+This simply means placing one component inside another to build a hierachy of UI pieces
+
+Working with CSS IN REACT
+Using Tailwindcss in React
+
+Working With Images in React
+1. working with images online stays the same (copy image address and put in your src="")
+
+2.Working with images locally
+ Move image into assets folder
+ import image into the component it is needed
+e.g import car from "filepath"
+    <img src={car}  />
+
+Props
+Props ( short for "properties") are used to pass data from one component to another
+Props Drilling
+Occurs when props are passed through multiple nested components
+Props Children 
+It means passing elements (p,div,h1) as data from parent to child
+Props Receiving in a child component comes in an object
+
+HANDLING USER INTERACTIONs 
+EVENTS IN REACT
+Events are actions triggered by user interaction (click,hover,input e.t.c)
+
+Conditional Rendering in React
+Multiple returns, using ternary operator and short circuit evaluation
+
+What is Routing?
+Routing is the process of moving between different pages or views in an application without reloading the browser.
+In traditional websites:
+Click link → New page loads → Full refresh
+
+In React (Single Page Application):
+Click link → Component changes → No refresh
+
+What is React Router DOM?
+React Router DOM is a library used in React to handle navigation between different components (pages) in a Single Page Application (SPA).
+
+It allows you to:
+Create multiple pages in React
+Navigate without refreshing the page
+Build dynamic URLs
+Handle nested routes
+Handle protected routes
+
+Why Do We Need React Router?
+Without routing in React:
+You only have one page (App.jsx)
+Everything appears on one screen
+No navigation between pages
+
+With React Router:
+You can have:
+Home page
+About page
+Dashboard
+Profile 
+
+Core Concepts of React Router
+1. BrowserRouter
+This enables routing in your app using the browser’s history API.
+
+Think of it as:
+The engine that powers routing
+
+2. Routes
+Defines all possible routes in your app.
+
+3. Route
+Maps a URL path to a component.
+
+
+React Hooks (Typed)
+What Are React Hooks?
+React Hooks are special functions introduced in React 16.8 that allow function components to use React features such as:
+
+State management
+Lifecycle methods
+Side effects
+References to DOM elements
+Context
+
+Before Hooks, these features were only available in class components.
+
+Why Use Hooks?
+✅ Simpler code
+✅ Reusable logic
+✅ Easier to read and maintain
+✅ Works naturally with TypeScript
+
+UNDERSTANDING STATE MANAGEMENT
+What is State?
+State is data that belongs to a component and can change over time.
+
+Think of state as the component's memory.
+
+Examples:
+User's name
+Counter value
+Shopping cart items
+Logged-in status
+Form inputs
+Theme mode (Dark/Light)
+
+Without state, React applications would be static and unresponsive.
+Real-Life Example
+
+Imagine a banking app.
+
+Current Balance:
+₦5,000
+
+After depositing money:
+₦15,000
+
+The balance changed.
+That changing balance is state.
+
+React uses state to keep track of changing information and update the UI automatically.
+
+What is State Management?
+State management is the process of:
+
+Creating state
+Reading state
+Updating state
+Sharing state between components
+
+Simply put:
+State Management = Managing changing data in an application
+
+function App() {
+  let count = 0;
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => count++}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+When the button is clicked:
+count++;
+
+The variable changes internally but React doesn't update the screen.
+
+Why?
+Because React only re-renders when state changes.
+This is why ordinary variables are not suitable for UI data.
+
+React follows a simple pattern:
+
+State Changes
+      ↓
+Component Re-renders
+      ↓
+UI Updates
+
+Example:
+count = 0
+Click Button
+count = 1
+React Re-renders
+UI shows 1
+
+useState()
+syntax
+const [state, setState] = useState<Type>(initialValue);
+
+state = variable that contains the initial state
+setState= the function that Updates the state
+useState= hook that initiates the state
+type= data type the state is supposed to handle
+initialValue= data

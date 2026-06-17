@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 1440px;
+}
+:root {
+  /* Dark Mode */
+  --Elements-bg-color: hsl(209, 23%, 22%);
+  --Background-color: hsl(207, 26%, 17%);
+  --Text-color: hsl(0, 100%, 100%);
+}
+.light-mode {
+  --Text-color: hsl(200, 15%, 8%);
+  --LightModeInput: hsl(0, 0%, 50%);
+  --Background-color: hsl(0, 0%, 99%);
+  --Elements-bg-color: hsl(0, 100%, 100%);
+}
+.bg-element {
+  background-color: var(--Elements-bg-color);
+}
+body {
+  background-color: var(--Background-color);
+}
+.text-color {
+  color: var(--Text-color);
+}
