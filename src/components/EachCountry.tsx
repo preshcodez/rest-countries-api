@@ -34,7 +34,7 @@ const EachCountry: React.FC<EachCountryProps> = ({ detail }) => {
         <p className="text-[16px]">Back</p>
       </div>
       <div className="flex flex-col lg:flex-row items-center w-full gap-10 lg:gap-37.5 mt-16">
-        <img src={detail.flags.png} alt="" className="w-full sm:w-[550] lg:w-[137.5] h-auto " />
+        <img src={detail.flags.png} alt="" className="w-full  lg:w-[137.5] h-auto " />
         <div className="flex flex-col w-full items-start text-start gap-10">
           <h2 className="text-[24px] font-extrabold">{detail.name}</h2>
           <div className="flex flex-col lg:flex-row  gap-10 items-start w-full justify-between ">
