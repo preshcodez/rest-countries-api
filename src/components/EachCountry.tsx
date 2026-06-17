@@ -22,44 +22,81 @@ const EachCountry: React.FC<EachCountryProps> = ({ detail }) => {
     ? detail.currencies[0].name
     : "No currency";
   return (
-    <div className="px-4 sm:px-8 lg:px-20 pb-50 text-color">
+    <div className="px-4 sm:px-8 lg:px-20 pb-20 text-color">
+      {/* Back Button */}
       <div
         onClick={() => {
           navigate("/");
           window.location.reload();
         }}
-        className="flex items-center w-30 justify-between shadow-md px-6 py-2 rounded-md cursor-pointer bg-element my-17.5"
+        className="flex items-center gap-3 w-fit shadow-md px-6 py-2 rounded-md cursor-pointer bg-element my-10"
       >
         <FaArrowLeft />
         <p className="text-[16px]">Back</p>
       </div>
-      <div className="flex flex-col lg:flex-row items-center w-full gap-10 lg:gap-37.5 mt-16">
+
+      {/* Main Content */}
+      <div className="flex flex-col lg:flex-row items-center lg:items-start w-full gap-10 lg:gap-20">
+        {/* Flag */}
         <img
           src={detail.flags.png}
-          alt=""
-          className="w-full md:w-[137.5] h-auto "
+          alt={detail.name}
+          className="w-full max-w-[560px] h-auto object-cover shadow-md"
         />
-        <div className="flex flex-col w-full items-start text-start gap-10">
-          <h2 className="text-[24px] font-extrabold">{detail.name}</h2>
-          <div className="flex flex-col lg:flex-row  gap-10 items-start w-full justify-between ">
-            <div className="flex flex-col items-start gap-2.5 text-[16px]">
-              <p>Native name:{detail.nativeName}</p>
-              <p>Population:{detail.population.toLocaleString()}</p>
-              <p>Region:{detail.region}</p>
-              <p>Sub-Region:{detail.subregion}</p>
-              <p>Capital:{detail.capital}</p>
+
+        {/* Country Details */}
+        <div className="flex flex-col w-full gap-8">
+          <h2 className="text-2xl md:text-3xl font-extrabold">{detail.name}</h2>
+
+          {/* Info Columns */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 justify-between">
+            <div className="flex flex-col gap-2 text-[15px] md:text-[16px]">
+              <p>
+                <span className="font-semibold">Native Name:</span>{" "}
+                {detail.nativeName}
+              </p>
+
+              <p>
+                <span className="font-semibold">Population:</span>{" "}
+                {detail.population.toLocaleString()}
+              </p>
+
+              <p>
+                <span className="font-semibold">Region:</span> {detail.region}
+              </p>
+
+              <p>
+                <span className="font-semibold">Sub Region:</span>{" "}
+                {detail.subregion}
+              </p>
+
+              <p>
+                <span className="font-semibold">Capital:</span> {detail.capital}
+              </p>
             </div>
-            <div className="flex flex-col items-start gap-2.5 text-[16px]">
-              <p>Top level domain: {detail.topLevelDomain.join(",")}</p>
-              <p>Currencies: {currencies}</p>
-              <p>Languages:{detail.languages?.map((i) => i.name).join(", ")}</p>
+
+            <div className="flex flex-col gap-2 text-[15px] md:text-[16px]">
+              <p>
+                <span className="font-semibold">Top Level Domain:</span>{" "}
+                {detail.topLevelDomain.join(", ")}
+              </p>
+
+              <p>
+                <span className="font-semibold">Currencies:</span> {currencies}
+              </p>
+
+              <p>
+                <span className="font-semibold">Languages:</span>{" "}
+                {detail.languages?.map((i) => i.name).join(", ")}
+              </p>
             </div>
           </div>
-          <div className="flex items-start gap-2 text-[16px] mt-5">
-            <p>Border Countries:</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 items-center place-items-center gap-5">
-              {border}
-            </div>
+
+          {/* Border Countries */}
+          <div className="flex flex-col md:flex-row gap-4 md:items-center">
+            <p className="font-semibold whitespace-nowrap">Border Countries:</p>
+
+            <div className="flex flex-wrap gap-3">{border}</div>
           </div>
         </div>
       </div>
