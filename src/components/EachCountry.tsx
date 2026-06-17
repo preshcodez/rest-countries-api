@@ -34,7 +34,11 @@ const EachCountry: React.FC<EachCountryProps> = ({ detail }) => {
         <p className="text-[16px]">Back</p>
       </div>
       <div className="flex flex-col lg:flex-row items-center w-full gap-10 lg:gap-37.5 mt-16">
-        <img src={detail.flags.png} alt="" className="w-full  lg:w-[137.5] h-auto " />
+        <img
+          src={detail.flags.png}
+          alt=""
+          className="w-full md:w-[137.5] h-auto "
+        />
         <div className="flex flex-col w-full items-start text-start gap-10">
           <h2 className="text-[24px] font-extrabold">{detail.name}</h2>
           <div className="flex flex-col lg:flex-row  gap-10 items-start w-full justify-between ">
@@ -53,7 +57,9 @@ const EachCountry: React.FC<EachCountryProps> = ({ detail }) => {
           </div>
           <div className="flex items-start gap-2 text-[16px] mt-5">
             <p>Border Countries:</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 items-center place-items-center gap-5">{border}</div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 items-center place-items-center gap-5">
+              {border}
+            </div>
           </div>
         </div>
       </div>
