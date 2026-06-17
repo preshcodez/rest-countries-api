@@ -6,12 +6,12 @@ import { useLocation, useParams } from "react-router-dom";
 interface CountryDetailsProps {
   details: Country[];
 }
-interface CountryParams {
-  countryName: string;
-}
+// interface CountryParams {
+//   countryName: string;
+// }
 
 const CountryDetails: React.FC<CountryDetailsProps> = ({ details }) => {
-  const { countryName } = useParams<CountryParams>();
+  const { countryName } = useParams<{ countryName: string }>();
   const { state } = useLocation();
   const findCountry: Country =
     state?.country ||

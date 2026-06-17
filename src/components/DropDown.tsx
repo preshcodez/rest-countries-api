@@ -1,4 +1,3 @@
-import type strict from "assert/strict";
 import React, { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
